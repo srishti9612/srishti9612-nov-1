@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.8",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "@types/react-modal": "^3.13.1",
+    "babel-plugin-module-resolver": "^4.1.0",
     "next": "13.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

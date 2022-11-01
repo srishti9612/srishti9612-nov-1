@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import React from 'react';
 import Modal from 'react-modal';
-import { isNoSubstitutionTemplateLiteral } from 'typescript';
-import { getRSCModuleType } from 'next/dist/build/analysis/get-page-static-info';
+import styles from './index.module.css';
+import Close from '@public/icons/close.svg';
 
 const customStyles = {
     content: {
-        top: '50%',
+        top: '35%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
@@ -17,7 +17,8 @@ const customStyles = {
         maxHeight: 'max-content',
         minWidth: '40%',
         maxWidth: 'max-content',
-      },
+        padding: '0px',
+    },
 
     overlay: {
         backgroundColor: 'hsl(0, 0%, 90%)',
@@ -46,8 +47,11 @@ const PostModal = () => {
                 onRequestClose={closeModal}
                 style={customStyles}
             >
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
+                <div className={styles.titleWrapper}>
+                    <div className={styles.titleText}>Create a new post</div>
+                    <Close className={styles.closeIcon} onClick={closeModal} />
+                </div>
+                <hr className={styles.line} />
             </Modal>
         </div>
     )

@@ -1,0 +1,27 @@
+.titleWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    height: 60px;
+}
+
+.closeIcon {
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.titleText {
+    margin-left: 20px;
+}
+
+.line {
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
