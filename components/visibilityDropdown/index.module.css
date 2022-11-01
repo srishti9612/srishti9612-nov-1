@@ -1,0 +1,58 @@
+.componentWrapper {
+  margin-right: 20px;
+  margin-left: auto;
+  z-index: 10;
+}
+
+.dropDownHeader {
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropDownMenu {
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  top: 32%;
+  left: 54%;
+  width: 40%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 8px 10px 3px #ebebeb;
+}
+
+.listItem {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+}
+
+.stateWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  user-select: none;
+}
+
+.stateDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.stateName {
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+.stateSelected {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin-left: auto;
+}
