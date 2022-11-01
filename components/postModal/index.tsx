@@ -3,6 +3,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import styles from './index.module.css';
 import Close from '@public/icons/close.svg';
+import VisibilityDropdown from '../visibilityDropdown';
+import Image from 'next/image';
 
 const customStyles = {
     content: {
@@ -25,11 +27,10 @@ const customStyles = {
     }
 };
 
-// modal.setAppElement
-
 const PostModal = () => {
-    let subTitle;
     const [modalIsOpen, setIsOpen] = useState(false);
+    const profileImgUrl = "https://picsum.photos/200";
+    const userName = "Jane Doe"; 
 
     const openModal = () => {
         setIsOpen(true);
@@ -52,6 +53,29 @@ const PostModal = () => {
                     <Close className={styles.closeIcon} onClick={closeModal} />
                 </div>
                 <hr className={styles.line} />
+                <div className={styles.postDetailsWrapper}>
+                    <div className={styles.profileImgWrapper}>
+                        <Image 
+                            width={55} 
+                            height={55}
+                            objectFit="cover"
+                            src={profileImgUrl} 
+                            alt="Profile Picture" />
+                    </div>
+                    <div className={styles.userName}>{userName}</div>
+                    <div className={styles.dropDownWrapper}>
+                        <VisibilityDropdown />
+                    </div>
+                </div>
+                <div>Text box with character limit</div>
+                <hr className={styles.line} />
+                <div>
+                    <div>
+                        <div>Image Icon</div>
+                        <div>Emoticon Icon</div>
+                    </div>
+                    <button>Send Post</button>
+                </div>
             </Modal>
         </div>
     )
