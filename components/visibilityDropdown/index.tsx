@@ -26,12 +26,12 @@ const VisibilityDropdown = () => {
     {
       name: "public",
       details: "Visible to everyone",
-      icon: () => <Public />,
+      icon: () => <Public className={styles.stateIcon}/>,
     },
     {
       name: "private",
       details: "Visible to your followers",
-      icon: () => <Private />,
+      icon: () => <Private className={styles.stateIcon}/>,
     },
   ];
 

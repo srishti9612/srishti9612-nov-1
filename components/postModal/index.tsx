@@ -5,6 +5,9 @@ import styles from "./index.module.css";
 import Close from "@public/icons/close.svg";
 import VisibilityDropdown from "../visibilityDropdown";
 import Image from "next/image";
+import Emoticons from "@public/icons/emoticons.svg";
+import UploadImage from "@public/icons/image.svg";
+import Send from "@public/icons/send.svg";
 
 const customStyles = {
   content: {
@@ -16,9 +19,11 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     boxShadow:
       "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    height: "50%",
+    // minHeight: "50%",
+    height:"max-content", 
     width: "40%",
     padding: "0px",
+    overflow: "hidden",
   },
 
   overlay: {
@@ -67,14 +72,17 @@ const PostModal = () => {
             <VisibilityDropdown />
           </div>
         </div>
-        <div>Text box with character limit</div>
-        <hr className={styles.line} />
-        <div>
-          <div>
-            <div>Image Icon</div>
-            <div>Emoticon Icon</div>
+        <div><textarea className={styles.postTextArea} placeholder="What's happening?"></textarea></div>
+        <hr className={styles.actionBarBorder} />
+        <div className={styles.actionBar}>
+          <div className={styles.actionItems}>
+            <div className={styles.imgUploadWrapper}><UploadImage className={styles.imgUploadIcon}/></div>
+            <div className={styles.emoticonWrapper}><Emoticons className={styles.emoticonIcon}/></div>
           </div>
-          <button>Send Post</button>
+          <div className={styles.sendButton}>
+            Send Post
+            <Send className={styles.sendIcon}/>
+          </div>
         </div>
       </Modal>
     </div>

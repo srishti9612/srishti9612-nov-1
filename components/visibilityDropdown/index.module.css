@@ -13,12 +13,14 @@
   position: fixed;
   z-index: 10;
   background-color: white;
-  top: 32%;
+  top: 36%;
   left: 54%;
   width: 40%;
-  padding: 10px;
+  /*padding: 10px;*/
   border-radius: 5px;
   box-shadow: 2px 8px 10px 3px #ebebeb;
+  border: 1px solid #ebebeb;
+  border-bottom: 0;
 }
 
 .listItem {
@@ -26,6 +28,8 @@
   display: flex;
   flex-direction: row;
   height: 60px;
+  border: 0;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .stateWrapper {
@@ -55,4 +59,14 @@
   align-items: center;
   width: max-content;
   margin-left: auto;
+  margin-right: 10px;
 }
+
+.stateIcon {
+  margin-left: 10px;
+}
+
+.stateInfo {
+  margin-left: 10px;
+}
+
