@@ -19,10 +19,15 @@
   border-radius: 50px;
 }
 
+.dropDownHeader .stateIcon {
+  fill: #176d91;
+}
+
 .dropDownIcon {
   transform: scale(0.75);
   margin-left: auto;
   margin-right: 5px;
+  fill: #176d91 !important;
 }
 
 .dropDownHeaderContent {
@@ -86,6 +91,7 @@
   text-transform: capitalize;
   margin-left: 10px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .stateSelected {
@@ -106,5 +112,31 @@
 .stateInfo {
   margin-left: 10px;
   font-size: 14px;
+  color: #173542;
 }
 
+.selectedStateInfo {
+  color: #50b9e6; 
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.selectedArrowIcon {
+  fill: #1d91c2;
+}
+
+.selectedIcon .stateIcon {
+  fill: #50b9e6;
+}
+
+.unselectedIcon .stateIcon {
+  fill: #173542;
+}
+
+.selectedStateName {
+  color: #50b9e6;
+  text-transform: capitalize;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}

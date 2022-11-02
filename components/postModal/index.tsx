@@ -131,7 +131,9 @@ const PostModal = () => {
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <button className={styles.createPostButton} onClick={openModal}>
+        Create Post
+      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -185,7 +187,7 @@ const PostModal = () => {
         <hr className={styles.actionBarBorder} />
         <div className={styles.actionBar}>
           <div className={styles.actionItems}>
-            <div className={styles.imgUploadWrapper}>
+            <div className={styles.imgUploadWrapper} onClick={openImagePicker}>
               <input
                 type="file"
                 id="file"
@@ -194,10 +196,7 @@ const PostModal = () => {
                 style={{ display: "none" }}
                 accept=".jpg,.jpeg,.png"
               />
-              <UploadImage
-                className={styles.imgUploadIcon}
-                onClick={openImagePicker}
-              />
+              <UploadImage className={styles.imgUploadIcon} />
             </div>
             <div
               className={styles.emoticonWrapper}

@@ -33,6 +33,7 @@
 .userName {
   margin-left: 10px;
   font-weight: 500;
+  color: #041a24;
 }
 
 .closeIcon {
@@ -43,6 +44,7 @@
 
 .titleText {
   margin-left: 20px;
+  color: #041a24;
 }
 
 .line {
@@ -120,6 +122,8 @@
   margin-right: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: #054059;
+  font-size: 14px;
 }
 
 .imgUploadIcon {
@@ -195,5 +199,16 @@
   overflow: "visible";
   position: absolute;
   left: 50px;
+}
+
+.createPostButton {
+  border: none;
+  width: 150px;
+  height: 50px;
+  background-color: #4aadba;
+  color:rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
