@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import React from "react";
 import Modal from "react-modal";
 import styles from "./index.module.css";
@@ -11,7 +11,7 @@ import Send from "@public/icons/send.svg";
 
 const customStyles = {
   content: {
-    top: "35%",
+    top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -19,7 +19,6 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     boxShadow:
       "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    // minHeight: "50%",
     height: "max-content",
     width: "40%",
     padding: "0px",
@@ -35,6 +34,9 @@ const PostModal = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [numberUsed, setNumberUsed] = useState(0);
   const [postText, setPostText] = useState("");
+  const [image, setImage] = useState("");
+
+  const inputFile = useRef<HTMLInputElement>(null);
   const profileImgUrl = "https://picsum.photos/200";
   const userName = "Jane Doe";
 
@@ -49,7 +51,19 @@ const PostModal = () => {
   const handlePostText = (e: any) => {
     setPostText(e.target.value);
     setNumberUsed(e.target.value.length);
-  }
+  };
+
+  const handleImageChange = (e: any) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+
+  const openImagePicker = () => {
+    if (inputFile.current) {
+      inputFile.current.click();
+    }
+  };
 
   return (
     <div>
@@ -89,11 +103,31 @@ const PostModal = () => {
         <div className={styles.charLimitInfoWrapper}>
           <div className={styles.charLimitInfo}>{numberUsed}/250</div>
         </div>
+        {image && (<div className={styles.imagePreview}>
+            <Image  
+              src={image} 
+              alt="Image preview"
+              className={styles.imgPreviewCustom}
+              height={100}
+              width={100}
+            />
+        </div>)}
         <hr className={styles.actionBarBorder} />
         <div className={styles.actionBar}>
           <div className={styles.actionItems}>
             <div className={styles.imgUploadWrapper}>
-              <UploadImage className={styles.imgUploadIcon} />
+              <input
+                type="file"
+                id="file"
+                ref={inputFile}
+                onChange={(e) => handleImageChange(e)}
+                style={{ display: "none" }}
+                accept=".jpg,.jpeg,.png"
+              />
+              <UploadImage
+                className={styles.imgUploadIcon}
+                onClick={openImagePicker}
+              />
             </div>
             <div className={styles.emoticonWrapper}>
               <Emoticons className={styles.emoticonIcon} />

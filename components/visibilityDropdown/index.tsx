@@ -4,6 +4,7 @@ import Public from "@public/icons/public.svg";
 import Private from "@public/icons/private.svg";
 import styles from "./index.module.css";
 import Selected from '@public/icons/selected.svg';
+import DownArrow from "@public/icons/downArrow.svg";
 
 type visibilityStates = "public" | "private";
 
@@ -39,10 +40,22 @@ const VisibilityDropdown = () => {
         setSelectedState(visibilitySetting);
   }
 
+  const dropDownHeaderContent = () => {
+
+    const selectState: stateObj | undefined = visibilityStates.find((item) => item.name === selectedState);
+    return (
+      <div className={styles.dropDownHeaderContent}>
+        {selectState?.icon()}
+        <div style={{textTransform: "capitalize", fontSize: "14px"}}>{selectState?.name}</div> 
+      </div>
+    )
+  }
+
   return (
     <div className={styles.componentWrapper}>
       <div className={styles.dropDownHeader} onClick={toggleDropDown}>
-        Visibility DropDown
+        {dropDownHeaderContent()}
+        <DownArrow className={styles.dropDownIcon}/>
       </div>
       <div
         className={styles.dropDownMenu}

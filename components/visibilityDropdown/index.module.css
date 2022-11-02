@@ -2,25 +2,60 @@
   margin-right: 20px;
   margin-left: auto;
   z-index: 10;
+  /********************/
+  position: relative;
 }
 
 .dropDownHeader {
   cursor: pointer;
   user-select: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 120px;
+  height: 30px;
+  background-color: #c0e6eb;
+  border-radius: 50px;
 }
 
-.dropDownMenu {
+.dropDownIcon {
+  transform: scale(0.75);
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.dropDownHeaderContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* .dropDownMenu {
   position: fixed;
   z-index: 10;
   background-color: white;
   top: 36%;
   left: 54%;
   width: 40%;
-  /*padding: 10px;*/
   border-radius: 5px;
   box-shadow: 2px 8px 10px 3px #ebebeb;
   border: 1px solid #ebebeb;
   border-bottom: 0;
+} */
+
+.dropDownMenu {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  margin-top: 10px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 2px 8px 10px 3px #ebebeb;
+  border: 1px solid #ebebeb;
+  border-bottom: 0;
+  right: 2%;
 }
 
 .listItem {
@@ -43,13 +78,14 @@
 .stateDetails {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
 .stateName {
   text-transform: capitalize;
   margin-left: 10px;
+  font-size: 14px;
 }
 
 .stateSelected {
@@ -64,9 +100,11 @@
 
 .stateIcon {
   margin-left: 10px;
+  transform: scale(0.75);
 }
 
 .stateInfo {
   margin-left: 10px;
+  font-size: 14px;
 }
 
