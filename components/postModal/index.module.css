@@ -144,20 +144,17 @@
 }
 
 .imagePreview {
-   /* width: 350px; */
-   width: 520px;
-   width: 85%;
-   aspect-ratio: 5/4;
+   height: 40%;
+   margin-right: 20px;
+   aspect-ratio: 2/1;
    margin-left: 50px;
    border-radius: 10px;
    margin-bottom: 10px;
    margin-top: 10px;
    position: relative;
-   /* background-color: blue; */
 }
 
 .imgPreviewCustom {
-   /* object-fit: contain; */
    width: 100% !important;
    height: 100% !important;
    border-radius: 10px;
@@ -168,13 +165,11 @@
   width: 50px;
   border-radius: 50%;
   z-index: 10;
-  /* margin-left: 10px;
-  margin-right: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   margin-top: 10px;
   margin-left: 10px;
@@ -192,14 +187,13 @@
   margin-left: 10px;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
 }
 
 .pickerWrapper {
   z-index: 100;
+  overflow: "visible";
   position: absolute;
-  width: max-content;
-  height: max-content;
-  left: 40%;
+  left: 50px;
 }
-
 

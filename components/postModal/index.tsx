@@ -13,7 +13,7 @@ import Picker from "emoji-picker-react";
 
 const customStyles = {
   content: {
-    top: "50%",
+    top: "45%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -24,11 +24,12 @@ const customStyles = {
     height: "max-content",
     width: "40%",
     padding: "0px",
-    overflow: "hidden",
+    overflow: "visible",
   },
 
   overlay: {
     backgroundColor: "hsl(0, 0%, 90%)",
+    OverflowY: "scroll",
   },
 };
 
@@ -60,17 +61,18 @@ const PostModal = () => {
   const isKeyCodeValid = (keyCode: number) => {
     let keycode = keyCode;
 
-    let valid = 
-        (keycode > 47 && keycode < 58)   || // number keys
-        keycode == 32 || keycode == 13   || // spacebar & return key(s) (if you want to allow carriage returns)
-        keycode == 8                     ||
-        (keycode > 64 && keycode < 91)   || // letter keys
-        (keycode > 95 && keycode < 112)  || // numpad keys
-        (keycode > 185 && keycode < 193) || // ;=,-./` (in order)
-        (keycode > 218 && keycode < 223);   // [\]' (in order)
+    let valid =
+      (keycode > 47 && keycode < 58) || // number keys
+      keycode == 32 ||
+      keycode == 13 || // spacebar & return key(s) (if you want to allow carriage returns)
+      keycode == 8 ||
+      (keycode > 64 && keycode < 91) || // letter keys
+      (keycode > 95 && keycode < 112) || // numpad keys
+      (keycode > 185 && keycode < 193) || // ;=,-./` (in order)
+      (keycode > 218 && keycode < 223); // [\]' (in order)
 
     return valid;
-  }
+  };
 
   const handleKeyPress = (e: any) => {
     console.log("handleKeyPress");
@@ -86,7 +88,7 @@ const PostModal = () => {
       if (postText.length > 0 && e.keyCode === 8) {
         if (e.keyCode === 8) {
           setNumberUsed((prevNumber) => prevNumber - 1);
-        } 
+        }
       } else {
         if (e.keyCode !== 8) {
           setNumberUsed((prevNumber) => prevNumber + 1);
@@ -197,11 +199,11 @@ const PostModal = () => {
                 onClick={openImagePicker}
               />
             </div>
-            <div className={styles.emoticonWrapper}>
-              <Emoticons
-                className={styles.emoticonIcon}
-                onClick={() => setShowEmojis(!showEmojis)}
-              />
+            <div
+              className={styles.emoticonWrapper}
+              onClick={() => setShowEmojis(!showEmojis)}
+            >
+              <Emoticons className={styles.emoticonIcon} />
               {showEmojis && (
                 <div className={styles.pickerWrapper}>
                   <Picker onEmojiClick={onEmojiClick} />
